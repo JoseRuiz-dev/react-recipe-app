@@ -19,7 +19,7 @@ function Veggie() {
         if (check) {
             setVeggie(JSON.parse(check));
         } else {
-            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`)
+            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=ketogenic`)
 
             const data = await api.json();
             localStorage.setItem('veggie', JSON.stringify(data.recipes));
@@ -29,7 +29,7 @@ function Veggie() {
     return (
         <div>
             <Wrapper >
-                <h3>Vegeterian Picks</h3>
+                <h3>Keto Picks</h3>
                 <Splide options={{
                     perPage: 3,
                     arrows: false,
